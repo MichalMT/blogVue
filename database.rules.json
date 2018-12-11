@@ -1,0 +1,28 @@
+{
+  "rules": {
+    "administrators": {
+      ".read": "true",
+      ".write": "data.hasChild(auth.uid)"
+    },
+    "categories": {
+      ".read": "true",
+      ".write": "root.child('administrators').hasChild(auth.uid)"
+    },
+    "comments": {
+      ".read": "true",
+      ".write": "auth != null"
+    },
+    "posts": {
+      ".read": "true",
+      ".write": "root.child('administrators').hasChild(auth.uid)"
+    },
+    "userNames": {
+      ".read": "true",
+      ".write": "auth != null"
+    },
+    "users": {
+      ".read": "true",
+      ".write": "auth != null"
+    }
+  }
+}
